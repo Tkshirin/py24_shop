@@ -45,12 +45,14 @@ INSTALLED_APPS = [
     # libs
     'rest_framework',
     'rest_framework_simplejwt',
+    'django_filters',
 
     # apps
     'applications.account',
     'applications.product',
     'applications.order',
     'applications.spam',
+    'applications.feedback',
 ]
 
 MIDDLEWARE = [
@@ -148,4 +150,10 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 EMAIL_POST_USER = config('EMAIL_HOST_USER')
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
+}
 

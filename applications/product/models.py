@@ -3,6 +3,7 @@ from django.db import models
 
 User = get_user_model()
 
+
 class Category(models.Model):
     title = models.SlugField(max_length=30, primary_key=True, unique=True)
     parent = models.ForeignKey('self', on_delete=models.CASCADE, null=True, blank=True, related_name='children')

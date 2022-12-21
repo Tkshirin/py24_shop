@@ -1,0 +1,9 @@
+run:
+	./manage.py runserver
+
+migrate:
+	./manage.py makemigrations
+    ./mnage.py migrate
+
+user:
+    ./manage.py createsuperuser
